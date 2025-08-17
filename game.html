@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Surprise</title>
+  <style>
+    body {
+      background: black;
+      color: white;
+      text-align: center;
+      font-family: Arial, sans-serif;
+      overflow: hidden;
+    }
+    /* First Page */
+    #page1 {
+      margin-top: 150px;
+    }
+    .message {
+      font-size: 2rem;
+      letter-spacing: 3px;
+      text-shadow: 0 0 10px white;
+    }
+    .open-btn {
+      margin-top: 40px;
+      padding: 12px 25px;
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 30px;
+      background: #444;
+      color: white;
+      cursor: pointer;
+      box-shadow: 0 0 10px white;
+      transition: 0.3s;
+    }
+    .open-btn:hover {
+      background: #888;
+      transform: scale(1.05);
+    }
+
+    /* Second Page */
+    #page2 {
+      display: none;
+      margin-top: 100px;
+    }
+    .flowers {
+      font-size: 4rem;
+      animation: bloom 2s ease forwards;
+    }
+    @keyframes bloom {
+      from { transform: scale(0); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+    .love-text {
+      margin-top: 20px;
+      font-size: 3rem;
+      color: pink;
+      text-shadow: 0 0 15px white, 0 0 25px pink;
+      animation: glow 1.5s infinite alternate;
+    }
+    @keyframes glow {
+      from { text-shadow: 0 0 10px pink; }
+      to { text-shadow: 0 0 30px white; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Page 1 -->
+  <div id="page1">
+    <div class="message">I Have Something For You</div>
+    <button class="open-btn" onclick="showLove()">✨ Open</button>
+  </div>
+
+  <!-- Page 2 -->
+  <div id="page2">
+    <div class="flowers">🌸🌸🌸</div>
+    <div class="love-text">GAME LA YE😁</div>
+  </div>
+
+  <script>
+    function showLove() {
+      document.getElementById("page1").style.display = "none";
+      document.getElementById("page2").style.display = "block";
+    }
+  </script>
+</body>
+</html>
